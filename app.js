@@ -8,6 +8,16 @@ const subtrahend = document.getElementById('subtrahend');
 const subtractButton = document.getElementById('subtract-button');
 const differenceDisplay = document.getElementById('difference-display');
 
+const multiplicand = document.getElementById('multiplicand');
+const multiplier = document.getElementById('multiplier');
+const multiplyButton = document.getElementById('multiply-button');
+const productDisplay = document.getElementById('product-display');
+
+const dividend = document.getElementById('dividend');
+const divisor = document.getElementById('divisor');
+const divideButton = document.getElementById('divide-button');
+const quotientDisplay = document.getElementById('quotient-display');
+
 addButton.addEventListener('click', () => {
     const sum = Number(addendOne.value) + Number(addendTwo.value);
     sumDisplay.value = sum;
@@ -16,4 +26,14 @@ addButton.addEventListener('click', () => {
 subtractButton.addEventListener('click', () => {
     const difference = Number(minuend.value) - Number(subtrahend.value);
     differenceDisplay.value = difference;
+});
+
+multiplyButton.addEventListener('click', () => {
+    const product = Number(multiplicand.value) * Number(multiplier.value);
+    productDisplay.value = product;
+});
+
+divideButton.addEventListener('click', () => {
+    const quotient = Number(dividend.value) / Number(divisor.value);
+    quotientDisplay.value = quotient;
 });

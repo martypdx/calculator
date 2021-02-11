@@ -24,7 +24,7 @@
         <section class="calculations">
             <p>
                 <input id="addend-one" type="number">
-                +
+                <span class="operator">+</span>
                 <input id="addend-two" type="number">
                 <button id="add-button">=</button>
                 <input id="sum-display" type="number" readonly placeholder="?">
@@ -32,10 +32,26 @@
 
             <p>
                 <input id="minuend" type="number">
-                -
+                <span class="operator">−</span>
                 <input id="subtrahend" type="number">
                 <button id="subtract-button">=</button>
                 <input id="difference-display" type="number" readonly placeholder="?">
+            </p>
+
+            <p>
+                <input id="multiplicand" type="number">
+                <span class="operator">×</span>
+                <input id="multiplier" type="number">
+                <button id="multiply-button">=</button>
+                <input id="product-display" type="number" readonly placeholder="?">
+            </p>
+
+            <p>
+                <input id="dividend" type="number">
+                <span class="operator">÷</span>
+                <input id="divisor" type="number">
+                <button id="divide-button">=</button>
+                <input id="quotient-display" type="number" readonly placeholder="?">
             </p>
         </section>
     </main>
