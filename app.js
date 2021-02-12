@@ -1,3 +1,6 @@
+import { add } from './utilities.js';
+
+
 const addendOne = document.getElementById('addend-one');
 const addendTwo = document.getElementById('addend-two');
 const addButton = document.getElementById('add-button');
@@ -19,7 +22,8 @@ const divideButton = document.getElementById('divide-button');
 const quotientDisplay = document.getElementById('quotient-display');
 
 addButton.addEventListener('click', () => {
-    const sum = Number(addendOne.value) + Number(addendTwo.value);
+    // const sum = Number(addendOne.value) + Number(addendTwo.value);
+    const sum = add(Number(addendOne.value), Number(addendTwo.value));
     sumDisplay.value = sum;
 });
 
