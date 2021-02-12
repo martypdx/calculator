@@ -1,41 +1,23 @@
-import { add, subtract, multiply, divide } from './utilities.js';
+import { add, subtract, multiply, divide } from './calculations.js';
 
-const addendOne = document.getElementById('addend-one');
-const addendTwo = document.getElementById('addend-two');
-const addButton = document.getElementById('add-button');
-const sumDisplay = document.getElementById('sum-display');
+function getNumber(input) {
+    return Number(input.value);
+}
 
-const minuend = document.getElementById('minuend');
-const subtrahend = document.getElementById('subtrahend');
-const subtractButton = document.getElementById('subtract-button');
-const differenceDisplay = document.getElementById('difference-display');
+function initOperator(firstInputId, secondInputId, buttonId, resultsId, calculation) {
+    const input1 = document.getElementById(firstInputId);
+    const input2 = document.getElementById(secondInputId);
+    const button = document.getElementById(buttonId);
+    const display = document.getElementById(resultsId);
 
-const multiplicand = document.getElementById('multiplicand');
-const multiplier = document.getElementById('multiplier');
-const multiplyButton = document.getElementById('multiply-button');
-const productDisplay = document.getElementById('product-display');
+    button.addEventListener('click', () => {
+        display.value = calculation(getNumber(input1), getNumber(input2));
+    });
+}
 
-const dividend = document.getElementById('dividend');
-const divisor = document.getElementById('divisor');
-const divideButton = document.getElementById('divide-button');
-const quotientDisplay = document.getElementById('quotient-display');
+initOperator('addend-one', 'addend-two', 'add-button', 'sum-display', add);
+initOperator('minuend', 'subtrahend', 'subtract-button', 'difference-display', subtract);
+initOperator('multiplicand', 'multiplier', 'multiply-button', 'product-display', multiply);
+initOperator('dividend', 'divisor', 'divide-button', 'quotient-display', divide);
 
-addButton.addEventListener('click', () => {
-    const sum = add(Number(addendOne.value), Number(addendTwo.value));
-    sumDisplay.value = sum;
-});
 
-subtractButton.addEventListener('click', () => {
-    const difference = subtract(Number(minuend.value), Number(subtrahend.value));
-    differenceDisplay.value = difference;
-});
-
-multiplyButton.addEventListener('click', () => {
-    const product = multiply(Number(multiplicand.value), Number(multiplier.value));
-    productDisplay.value = product;
-});
-
-divideButton.addEventListener('click', () => {
-    const quotient = divide(Number(dividend.value), Number(divisor.value));
-    quotientDisplay.value = quotient;
-});
