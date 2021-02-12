@@ -11,6 +11,8 @@ function initOperator(firstInputId, secondInputId, buttonId, resultsId, calculat
     const display = document.getElementById(resultsId);
 
     button.addEventListener('click', () => {
+        // my calculator using a readonly input to display the result,
+        // if you're using an element, you want to set the .textContent property!
         display.value = calculation(getNumber(input1), getNumber(input2));
     });
 }

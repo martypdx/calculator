@@ -1,1 +1,3 @@
-# EDIT-THIS-README
+# Simple Calculator
+
+Do the maths!
