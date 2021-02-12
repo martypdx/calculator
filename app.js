@@ -1,4 +1,4 @@
-import { add } from './utilities.js';
+import { add, subtract, multiply, divide } from './utilities.js';
 
 
 const addendOne = document.getElementById('addend-one');
@@ -28,16 +28,16 @@ addButton.addEventListener('click', () => {
 });
 
 subtractButton.addEventListener('click', () => {
-    const difference = Number(minuend.value) - Number(subtrahend.value);
+    const difference = subtract(Number(minuend.value), Number(subtrahend.value));
     differenceDisplay.value = difference;
 });
 
 multiplyButton.addEventListener('click', () => {
-    const product = Number(multiplicand.value) * Number(multiplier.value);
+    const product = multiply(Number(multiplicand.value), Number(multiplier.value));
     productDisplay.value = product;
 });
 
 divideButton.addEventListener('click', () => {
-    const quotient = Number(dividend.value) / Number(divisor.value);
+    const quotient = divide(Number(dividend.value), Number(divisor.value));
     quotientDisplay.value = quotient;
 });
